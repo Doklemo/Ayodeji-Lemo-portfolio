@@ -503,7 +503,8 @@
   transform: rotate(0deg) translateY(-24px) !important;
 }
 
-.footer-card img {
+.footer-card img,
+.footer-card video {
   display: block;
   width: 240px;
   height: auto;
@@ -708,7 +709,8 @@
     padding: 8px;
   }
 
-  .footer-card img {
+  .footer-card img,
+  .footer-card video {
     width: 160px;
   }
 
@@ -780,7 +782,8 @@
 }
 
 @media (max-width: 480px) {
-  .footer-card img {
+  .footer-card img,
+  .footer-card video {
     width: 130px;
   }
 
