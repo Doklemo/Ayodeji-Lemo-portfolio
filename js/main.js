@@ -220,6 +220,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetPane = document.getElementById(targetId);
       if (targetPane) {
         targetPane.classList.add('active');
+
+        // Play/Pause videos dynamically to avoid network overhead for hidden panes
+        if (targetId === 'ui-visuals-pane') {
+          const videos = targetPane.querySelectorAll('video');
+          videos.forEach(video => {
+            video.play().catch(err => console.log('Video autoplay blocked:', err));
+          });
+        } else {
+          const visualsPane = document.getElementById('ui-visuals-pane');
+          if (visualsPane) {
+            const videos = visualsPane.querySelectorAll('video');
+            videos.forEach(video => {
+              video.pause();
+            });
+          }
+        }
       }
     });
   });
