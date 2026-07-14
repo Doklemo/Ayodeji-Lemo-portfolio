@@ -411,3 +411,272 @@ textarea {
 .exp-item:hover .btn-view {
   background: #E5E5E5;
 }
+
+.tabs-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: var(--space-10);
+}
+
+.section-header--has-tabs {
+  margin-bottom: var(--space-6) !important;
+}
+
+.tab-list {
+  display: inline-flex;
+  background-color: var(--color-fill-secondary);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-separator);
+}
+
+.tab-btn {
+  padding: 6px var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-label-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-standard);
+  user-select: none;
+}
+
+.tab-btn:hover {
+  color: var(--color-label-primary);
+}
+
+.tab-btn.active {
+  background-color: var(--color-fill-primary);
+  color: var(--color-label-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Tab Panels */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeIn var(--duration-slow) var(--ease-out);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   UI VISUALS GRID
+   ========================================= */
+.grid-visuals {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-visuals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.visual-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.visual-card-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--color-fill-secondary);
+}
+
+@media (max-width: 768px) {
+  .visual-card-image-wrapper {
+    border-radius: var(--radius-md);
+  }
+}
+
+.visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-card-image-wrapper--video {
+  background: transparent;
+}
+
+.visual-card-image-wrapper--video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Interactive states for UI Visual cards */
+.visual-card[data-src] {
+  cursor: pointer;
+}
+
+.visual-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-standard);
+}
+
+.visual-zoom-icon {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-label-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transform: scale(0.9);
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.visual-card[data-src]:hover .visual-card-overlay {
+  opacity: 1;
+}
+
+.visual-card[data-src]:hover .visual-zoom-icon {
+  transform: scale(1);
+}
+
+.visual-card[data-src]:hover img {
+  transform: scale(1.02);
+}
+
+.visual-img {
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+/* Lightbox Modal */
+.lightbox-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  max-width: 80vw;
+  max-height: 80vh;
+  outline: none;
+  overflow: visible;
+}
+
+.lightbox-dialog[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: lightboxFadeIn var(--duration-base) var(--ease-out) forwards;
+}
+
+.lightbox-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image,
+.lightbox-video {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+  opacity: 0;
+  transform: scale(0.95);
+  animation: lightboxScaleIn var(--duration-base) var(--ease-out) forwards;
+  outline: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #FFF;
+  font-size: 32px;
+  cursor: pointer;
+  padding: var(--space-2);
+  line-height: 1;
+  transition: transform var(--duration-fast) var(--ease-standard), opacity var(--duration-fast) var(--ease-standard);
+  opacity: 0.8;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lightboxScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .lightbox-close {
+    top: var(--space-4);
+    right: var(--space-4);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: var(--radius-full);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+.section-link {
+  transition: color var(--duration-fast) var(--ease-standard), opacity var(--duration-base) var(--ease-standard) !important;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+}

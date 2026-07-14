@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /images/
-Sitemap: https://ayodejilemo.com/sitemap.xml
+Disallow: /img/
+Sitemap: https://lemo.design/sitemap.xml

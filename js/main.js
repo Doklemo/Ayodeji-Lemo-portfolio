@@ -185,4 +185,110 @@ document.addEventListener('DOMContentLoaded', () => {
     checkNavOverlap(); // run on load
   }
 
+  /* -------------------------------------------------------
+     7. TAB CONTROLLER (Case studies ↔ UI visuals)
+     ------------------------------------------------------- */
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const viewAllLink = document.querySelector('.section-link');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Deactivate all buttons in this tab list
+      const tabList = btn.closest('.tab-list');
+      const paneIds = [];
+      
+      tabList.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+        paneIds.push(b.getAttribute('aria-controls'));
+      });
+
+      // Activate clicked button
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Hide all panels associated with this tab group
+      paneIds.forEach(id => {
+        const pane = document.getElementById(id);
+        if (pane) {
+          pane.classList.remove('active');
+        }
+      });
+
+      // Show target panel
+      const targetId = btn.getAttribute('aria-controls');
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+
+  // =========================================
+  // LIGHTBOX MODAL CONTROLLER (UI VISUALS)
+  // =========================================
+  const lightbox = document.getElementById('visuals-lightbox');
+  if (lightbox) {
+    const lightboxImg = lightbox.querySelector('.lightbox-image');
+    const lightboxVideo = lightbox.querySelector('.lightbox-video');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const visualCards = document.querySelectorAll('.visual-card[data-src]');
+
+    visualCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const fullSrc = card.getAttribute('data-src');
+        const isVideo = card.getAttribute('data-type') === 'video';
+
+        if (fullSrc) {
+          if (isVideo) {
+            if (lightboxImg) lightboxImg.style.display = 'none';
+            if (lightboxVideo) {
+              lightboxVideo.style.display = 'block';
+              lightboxVideo.src = fullSrc;
+              lightboxVideo.load();
+              lightboxVideo.play().catch(err => console.log('Autoplay blocked:', err));
+            }
+          } else {
+            if (lightboxVideo) {
+              lightboxVideo.style.display = 'none';
+              lightboxVideo.src = '';
+            }
+            if (lightboxImg) {
+              lightboxImg.style.display = 'block';
+              lightboxImg.src = fullSrc;
+              const imgEl = card.querySelector('img');
+              lightboxImg.alt = imgEl ? (imgEl.alt || 'UI Visual Zoomed View') : 'UI Visual Zoomed View';
+            }
+          }
+          lightbox.showModal();
+        }
+      });
+    });
+
+    // Close on clicking close button
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', () => {
+        lightbox.close();
+      });
+    }
+
+    // Close on clicking backdrop
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.close();
+      }
+    });
+
+    // Reset image/video src on close to clean up memory/load state
+    lightbox.addEventListener('close', () => {
+      if (lightboxImg) {
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      }
+      if (lightboxVideo) {
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+      }
+    });
+  }
 });
