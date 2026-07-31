@@ -544,95 +544,224 @@
     <!-- Experimental AI Projects -->
     <section class="section experimental-projects">
       <div class="container">
-        <div class="experimental-grid">
+        
+        <!-- Header & Description Stacked on Top -->
+        <div class="experimental-header">
+          <h2 class="experimental-title">Projects<br>built using AI.</h2>
+          <p class="experimental-desc">
+            Exploring how AI can accelerate product thinking, prototyping, and development. These projects were
+            designed and built using tools like Antigravity, Cursor, and Claude Code—combining design, systems
+            thinking, and AI-assisted workflows to turn ideas into functional experiences faster.
+          </p>
+        </div>
 
-          <!-- Left side: Headline & Text -->
-          <div class="experimental-text">
-            <h2 class="experimental-title">Projects<br>built using AI.</h2>
-            <p class="experimental-desc">
-              Exploring how AI can accelerate product thinking, prototyping, and development. These projects were
-              designed and built using tools like Antigravity, Cursor, and Claude Code—combining design, systems
-              thinking, and AI-assisted workflows to turn ideas into functional experiences faster.
-            </p>
+        <!-- Sub-section Tabs -->
+        <div class="tabs-container" style="margin-bottom: var(--space-8);">
+          <div class="tab-list" role="tablist" aria-label="AI Project Sub-sections">
+            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="ai-products-pane" id="tab-ai-products">Products &amp; Tools</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="ai-landing-pane" id="tab-ai-landing">Landing Pages</button>
           </div>
+        </div>
 
-          <!-- Right side: Projects List -->
-          <div class="experimental-list">
+        <!-- Tab Panel 1: Products & Tools (Bento Grid) -->
+        <div id="ai-products-pane" class="tab-panel active" role="tabpanel" aria-labelledby="tab-ai-products">
+          <div class="bento-grid">
 
-            <a href="https://dividing.vercel.app/" target="_blank" rel="noopener" class="exp-item">
-              <div class="exp-info">
-                <span class="exp-name">Dividing App</span>
-                <span class="exp-desc">Deeply understand scripture through AI-powered contextual, theological, and scholarly insights.</span>
-                <span class="exp-tags">Progressive Web App / AI / Antigravity</span>
-              </div>
-              <div class="exp-action">
-                <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg></span>
+            <!-- Card 1: YourTour (Featured Wide Card) -->
+            <a href="https://your-tour-go.vercel.app/" target="_blank" rel="noopener" class="bento-card bento-card--wide">
+              <div class="bento-card-inner">
+                <div class="bento-card-media">
+                  <img src="img/YourTour app.png" alt="YourTour app preview" loading="lazy" />
+                </div>
+                <div class="bento-card-body">
+                  <div class="bento-card-header-row">
+                    <h3 class="bento-card-title">YourTour</h3>
+                  </div>
+                  <p class="bento-card-desc">An interactive travel discovery and vacation-planning platform.</p>
+                  <div class="bento-card-footer">
+                    <span class="bento-card-tags">Web App / AI / Codex</span>
+                    <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                  </div>
+                </div>
               </div>
             </a>
 
-            <a href="work/kerashopper" class="exp-item">
-              <div class="exp-info">
-                <span class="exp-name">KeraShopper App</span>
-                <span class="exp-desc">Mobile-first assistant streamlining workflows for professional market errand runners in Lagos.</span>
-                <span class="exp-tags">Progressive Web App / AI / Antigravity / Claude</span>
-              </div>
-              <div class="exp-action">
-                <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg></span>
-              </div>
-            </a>
-
-            <a href="https://www.figma.com/community/plugin/1603832508473445650/patternforge?q_id=1abc5f2e-1057-4cb1-a06c-9993dff2ad2d" target="_blank" rel="noopener" class="exp-item">
-              <div class="exp-info">
-                <span class="exp-name">PatternForge</span>
-                <span class="exp-desc">Figma plugin to generate beautiful, seamless SVG patterns using AI prompt instructions.</span>
-                <span class="exp-tags">Figma plugin / AI / Antigravity / Claude</span>
-              </div>
-              <div class="exp-action">
-                <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg></span>
+            <!-- Card 2: Dividing App -->
+            <a href="https://dividing.vercel.app/" target="_blank" rel="noopener" class="bento-card">
+              <div class="bento-card-inner">
+                <div class="bento-card-media">
+                  <img src="img/dividing-app-banner.png" alt="Dividing App preview" loading="lazy" />
+                </div>
+                <div class="bento-card-body">
+                  <div class="bento-card-header-row">
+                    <h3 class="bento-card-title">Dividing App</h3>
+                  </div>
+                  <p class="bento-card-desc">Deeply understand scripture through AI-powered contextual, theological, and scholarly insights.</p>
+                  <div class="bento-card-footer">
+                    <span class="bento-card-tags">Progressive Web App / AI / Antigravity</span>
+                    <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                  </div>
+                </div>
               </div>
             </a>
 
-            <a href="https://www.figma.com/community/plugin/1594832100065863445/chromaflow" target="_blank" rel="noopener" class="exp-item">
-              <div class="exp-info">
-                <span class="exp-name">Chromaflow</span>
-                <span class="exp-desc">Dynamic Figma plugin for creating and applying cohesive color palettes and custom design systems.</span>
-                <span class="exp-tags">Figma plugin / AI / Antigravity</span>
-              </div>
-              <div class="exp-action">
-                <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg></span>
+            <!-- Card 3: KeraShopper App -->
+            <a href="work/kerashopper" class="bento-card">
+              <div class="bento-card-inner">
+                <div class="bento-card-media">
+                  <img src="img/Kerashopper banner.webp" alt="KeraShopper App preview" loading="lazy" />
+                </div>
+                <div class="bento-card-body">
+                  <div class="bento-card-header-row">
+                    <h3 class="bento-card-title">KeraShopper App</h3>
+                  </div>
+                  <p class="bento-card-desc">Mobile-first assistant streamlining workflows for professional market errand runners in Lagos.</p>
+                  <div class="bento-card-footer">
+                    <span class="bento-card-tags">Progressive Web App / AI / Antigravity / Claude</span>
+                    <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                  </div>
+                </div>
               </div>
             </a>
 
-            <a href="https://www.figma.com/community/plugin/1527976474695400265/button-styler" target="_blank" rel="noopener" class="exp-item">
-              <div class="exp-info">
-                <span class="exp-name">Button Styler</span>
-                <span class="exp-desc">Figma plugin automating button creation, state styling, and design token mapping.</span>
-                <span class="exp-tags">Figma plugin / AI / Cursor / Gemini</span>
-              </div>
-              <div class="exp-action">
-                <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg></span>
+            <!-- Card 4: PatternForge -->
+            <a href="https://www.figma.com/community/plugin/1603832508473445650/patternforge?q_id=1abc5f2e-1057-4cb1-a06c-9993dff2ad2d" target="_blank" rel="noopener" class="bento-card">
+              <div class="bento-card-inner">
+                <div class="bento-card-media">
+                  <img src="img/patternforge-banner.png" alt="PatternForge plugin preview" loading="lazy" />
+                </div>
+                <div class="bento-card-body">
+                  <div class="bento-card-header-row">
+                    <h3 class="bento-card-title">PatternForge</h3>
+                  </div>
+                  <p class="bento-card-desc">Figma plugin to generate beautiful, seamless SVG patterns using AI prompt instructions.</p>
+                  <div class="bento-card-footer">
+                    <span class="bento-card-tags">Figma plugin / AI / Antigravity / Claude</span>
+                    <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                  </div>
+                </div>
               </div>
             </a>
+
+            <!-- Card 5: Chromaflow -->
+            <a href="https://www.figma.com/community/plugin/1594832100065863445/chromaflow" target="_blank" rel="noopener" class="bento-card">
+              <div class="bento-card-inner">
+                <div class="bento-card-media">
+                  <img src="img/chromaflow-banner.png" alt="Chromaflow plugin preview" loading="lazy" />
+                </div>
+                <div class="bento-card-body">
+                  <div class="bento-card-header-row">
+                    <h3 class="bento-card-title">Chromaflow</h3>
+                  </div>
+                  <p class="bento-card-desc">Dynamic Figma plugin for creating and applying cohesive color palettes and custom design systems.</p>
+                  <div class="bento-card-footer">
+                    <span class="bento-card-tags">Figma plugin / AI / Antigravity</span>
+                    <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 6: Button Styler -->
+            <a href="https://www.figma.com/community/plugin/1527976474695400265/button-styler" target="_blank" rel="noopener" class="bento-card">
+              <div class="bento-card-inner">
+                <div class="bento-card-media">
+                  <img src="img/button-styler-banner.png" alt="Button Styler plugin preview" loading="lazy" />
+                </div>
+                <div class="bento-card-body">
+                  <div class="bento-card-header-row">
+                    <h3 class="bento-card-title">Button Styler</h3>
+                  </div>
+                  <p class="bento-card-desc">Figma plugin automating button creation, state styling, and design token mapping.</p>
+                  <div class="bento-card-footer">
+                    <span class="bento-card-tags">Figma plugin / AI / Cursor / Gemini</span>
+                    <span class="btn-view">View <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Tab Panel 2: Landing Pages (Standard Grid) -->
+        <div id="ai-landing-pane" class="tab-panel" role="tabpanel" aria-labelledby="tab-ai-landing">
+          <div class="grid-work">
+
+            <!-- Landing Page Card 1: Aeris -->
+            <article class="card">
+              <a href="https://aeris-kappa-nine.vercel.app/" target="_blank" rel="noopener" class="card-link" aria-label="Aeris landing page">
+                <div class="card-image-wrapper">
+                  <div class="card-image">
+                    <img src="img/Aeris Landing page.png" alt="Aeris Landing Page" loading="lazy" decoding="async">
+                  </div>
+                  <div class="card-overlay-tags">
+                    <span class="overlay-tag">Landing Page</span>
+                  </div>
+                  <div class="card-overlay-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-info">
+                  <div class="card-title-group">
+                    <h2 class="card-title">Aeris</h2>
+                  </div>
+                  <span class="card-year">2026</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Landing Page Card 2: Innovfarm -->
+            <article class="card">
+              <a href="https://innovfarm.vercel.app/" target="_blank" rel="noopener" class="card-link" aria-label="Innovfarm landing page">
+                <div class="card-image-wrapper">
+                  <div class="card-image">
+                    <img src="img/Innovfarm.png" alt="Innovfarm Landing Page" loading="lazy" decoding="async">
+                  </div>
+                  <div class="card-overlay-tags">
+                    <span class="overlay-tag">Landing Page</span>
+                  </div>
+                  <div class="card-overlay-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-info">
+                  <div class="card-title-group">
+                    <h2 class="card-title">Innovfarm</h2>
+                  </div>
+                  <span class="card-year">2026</span>
+                </div>
+              </a>
+            </article>
+
+            <!-- Landing Page Card 3: mymind -->
+            <article class="card">
+              <a href="https://mymind-landing-page.vercel.app/" target="_blank" rel="noopener" class="card-link" aria-label="mymind landing page">
+                <div class="card-image-wrapper">
+                  <div class="card-image">
+                    <img src="img/mymindlp.png" alt="mymind Landing Page" loading="lazy" decoding="async">
+                  </div>
+                  <div class="card-overlay-tags">
+                    <span class="overlay-tag">Landing Page</span>
+                  </div>
+                  <div class="card-overlay-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-info">
+                  <div class="card-title-group">
+                    <h2 class="card-title">mymind</h2>
+                  </div>
+                  <span class="card-year">2026</span>
+                </div>
+              </a>
+            </article>
 
           </div>
         </div>
