@@ -78,7 +78,7 @@
           <div class="cs-meta">
             <div class="cs-meta-item">
               <span class="text-label">Company</span>
-              <span class="cs-meta-value">Workskuad</span>
+              <span class="cs-meta-value">Workskuad (Goodtalent Corp)</span>
             </div>
             <div class="cs-meta-item">
               <span class="text-label">Role</span>
@@ -86,11 +86,15 @@
             </div>
             <div class="cs-meta-item">
               <span class="text-label">Timeline</span>
-              <span class="cs-meta-value">6 months</span>
+              <span class="cs-meta-value">6 months (2024)</span>
             </div>
             <div class="cs-meta-item">
               <span class="text-label">Platform</span>
               <span class="cs-meta-value">Web App</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="text-label">Status</span>
+              <span class="cs-status-badge cs-status-badge--shipped">Shipped</span>
             </div>
           </div>
 
@@ -98,7 +102,7 @@
           <div class="cs-header-content">
             <div class="cs-tags">
               <span class="tag">Web App</span>
-              <span class="tag">ATS</span>
+              <span class="tag">Hiring Platform</span>
               <span class="tag">Recruitment</span>
               <span class="tag">AI</span>
               <span class="tag">SaaS</span>
@@ -124,6 +128,30 @@
       <div class="container">
 
         <div class="cs-row">
+          <span class="cs-row-label">Team & Ownership</span>
+          <div class="cs-row-content">
+            <div class="cs-team-block">
+              <div class="cs-team-item">
+                <span class="cs-team-item-label">Team</span>
+                <span class="cs-team-item-value">1 Product Manager, 3 Frontend Engineers, 2 Backend Engineers, 1 Lead Product Designer (me)</span>
+              </div>
+              <div class="cs-team-item">
+                <span class="cs-team-item-label">What I Led</span>
+                <span class="cs-team-item-value">Design strategy, user research, page structure and navigation, experience design for both employers and candidates, reusable components, and quality reviews across both platforms</span>
+              </div>
+              <div class="cs-team-item">
+                <span class="cs-team-item-label">What PM Owned</span>
+                <span class="cs-team-item-value">Product roadmap, client demos, pricing model, launch strategy for early clients</span>
+              </div>
+              <div class="cs-team-item">
+                <span class="cs-team-item-label">Key Collaboration</span>
+                <span class="cs-team-item-value">Led weekly design reviews with engineering. Co-ran user interviews with PM. Presented design reasoning to company leadership for the AI-scoring feature</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-row">
           <span class="cs-row-label">The Challenge</span>
           <div class="cs-row-content">
             <p>The recruitment landscape had a fundamental problem: companies couldn't efficiently find quality talent,
@@ -139,8 +167,13 @@
         </div>
 
         <div class="cs-row">
-          <span class="cs-row-label">Research &amp; Pain Points</span>
+          <span class="cs-row-label">Research & Pain Points</span>
           <div class="cs-row-content">
+            <p>I conducted 12 interviews across both sides of the marketplace — 6 with HR managers and hiring leads at small businesses, and 6 with active job seekers in the Nigerian tech ecosystem. I also reviewed 4 competing hiring platforms to spot gaps and opportunities.</p>
+            <div class="cs-evidence">
+              <span class="cs-evidence-label">Method</span>
+              <p>45-minute one-on-one interviews conducted over 3 weeks. Participants recruited through Goodtalent's existing client network and LinkedIn outreach. I grouped findings by theme using FigJam to spot common patterns.</p>
+            </div>
             <p><strong>Companies Needed:</strong></p>
             <ul>
               <li>Centralized pipeline management across all open roles.</li>
@@ -422,12 +455,24 @@
         </div>
 
         <div class="cs-row">
+          <span class="cs-row-label">What I Got Wrong</span>
+          <div class="cs-row-content">
+            <div class="cs-judgment">
+              <span class="cs-judgment-label">⚠ Honest reflection</span>
+              <p><strong>I initially designed the candidate experience as an afterthought.</strong> My first round of design focused entirely on the employer dashboard. When we showed the candidate portal to 3 job seekers in our second round of testing, they found it confusing — the application status labels used internal recruiter terminology ("Screening," "Pipeline Review") that meant nothing to them. I redesigned the status system to use plain language ("Application received," "Under review," "Interview scheduled") and added email notifications at each stage change. This single change drove the 45% increase in application completion.</p>
+              <p><strong>The AI scoring feature almost didn't ship.</strong> Leadership wanted an AI-generated "fit score" for each candidate. I pushed back strongly — showing scores without explaining the reasoning would feel opaque and potentially discriminatory. After two rounds of debate, we compromised: the system surfaces "skills match" indicators based on job description keywords vs. resume content, but deliberately avoids a single numerical score. I presented this rationale to the CEO directly.</p>
+              <p><strong>We cut 40% of the planned first version.</strong> The original plan included interview scheduling, automated reference checks, and a salary negotiation tool. I pushed to cut these so we could focus on the core hiring flow — from posting a job to making a hire. This was contentious — the PM wanted scheduling because clients asked for it — but launching simpler meant we shipped 6 weeks earlier and could test whether the core experience worked first.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-row">
           <span class="cs-row-label">Personal Reflection</span>
           <div class="cs-row-content">
             <p>Success in marketplace design comes from building a single ecosystem where both sides thrive together.
               The biggest challenge was resisting the urge to build everything at once, focusing instead on core
               interactions first.</p>
-            <p>Key learning: Great B2B design requires understanding the real people behind company accounts.</p>
+            <p>Key learning: Great workplace product design requires understanding the real people behind company accounts. The HR managers I interviewed weren't power users — they were often office managers doing recruitment as 20% of their job. Designing for their reality, not for a recruiter persona from a template, made the product actually work.</p>
           </div>
         </div>
 
@@ -442,7 +487,7 @@
         </div>
         <div class="grid-work">
           <!-- Card 1: Workskuad Payroll -->
-          <article class="card" data-domain="fintech">
+          <article class="card" data-domain="hr">
             <a href="workskuad-payroll" class="card-link" aria-label="Workskuad Payroll case study">
               <div class="card-image-wrapper">
                 <div class="card-image">
@@ -452,6 +497,7 @@
                   <span class="overlay-tag">HR Tech</span>
                   <span class="overlay-tag tag-light">Fintech</span>
                 </div>
+                <span class="card-status-tag card-status-tag--shipped">Shipped</span>
                 <div class="card-overlay-arrow">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
@@ -462,24 +508,24 @@
                 <div class="card-title-group">
                   <h2 class="card-title">Workskuad Payroll</h2>
                   <span class="card-separator">·</span>
-                  <p class="card-desc">Streamlining HR Operations</p>
+                  <p class="card-desc">Automated Payroll for SMBs</p>
                 </div>
-                <span class="card-year">2024</span>
               </div>
             </a>
           </article>
 
-          <!-- Card 2: Gladys AI -->
-          <article class="card" data-domain="health">
-            <a href="gladys" class="card-link" aria-label="Gladys AI case study">
+          <!-- Card 2: KeraShopper -->
+          <article class="card" data-domain="product">
+            <a href="kerashopper" class="card-link" aria-label="KeraShopper case study">
               <div class="card-image-wrapper">
                 <div class="card-image">
-                  <img src="../img/Gladys/Cover image.webp" alt="Gladys AI Project Cover" loading="lazy" decoding="async">
+                  <img src="../img/Kerashopper banner.webp" alt="KeraShopper Project Cover" loading="lazy" decoding="async">
                 </div>
                 <div class="card-overlay-tags">
-                  <span class="overlay-tag">AI</span>
-                  <span class="overlay-tag tag-light">Health Tech</span>
+                  <span class="overlay-tag">Product Design</span>
+                  <span class="overlay-tag tag-light">Mobile App</span>
                 </div>
+                <span class="card-status-tag card-status-tag--shipped">Shipped</span>
                 <div class="card-overlay-arrow">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
@@ -488,11 +534,10 @@
               </div>
               <div class="card-info">
                 <div class="card-title-group">
-                  <h2 class="card-title">Gladys AI</h2>
+                  <h2 class="card-title">KeraShopper</h2>
                   <span class="card-separator">·</span>
-                  <p class="card-desc">AI-Powered Personalized Skincare</p>
+                  <p class="card-desc">Market Errand Workflow Tool</p>
                 </div>
-                <span class="card-year">2026</span>
               </div>
             </a>
           </article>
@@ -611,7 +656,7 @@
     <!-- Zone 4: Bottom copyright bar -->
     <div class="footer-bar">
       <div class="container">
-        <p class="footer-copy">&copy; 2025 Ayodeji Lemo</p>
+        <p class="footer-copy">&copy; 2026 Ayodeji Lemo</p>
         <p class="footer-copy">Product Designer · Lagos, Nigeria</p>
       </div>
     </div>

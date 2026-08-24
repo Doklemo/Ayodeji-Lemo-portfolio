@@ -809,3 +809,196 @@ textarea {
     display: none !important;
   }
 }
+
+/* ============================================================
+   Portfolio Credibility Components
+   ============================================================ */
+
+/* Status Badge — Project type indicator */
+.cs-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cs-status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cs-status-badge--shipped {
+  background: rgba(29, 150, 85, 0.1);
+  color: var(--color-success);
+}
+
+.cs-status-badge--shipped::before {
+  background: var(--color-success);
+}
+
+.cs-status-badge--concept {
+  background: rgba(0, 102, 204, 0.08);
+  color: var(--color-accent);
+}
+
+.cs-status-badge--concept::before {
+  background: var(--color-accent);
+}
+
+.cs-status-badge--exploration {
+  background: rgba(174, 174, 178, 0.15);
+  color: var(--color-label-tertiary);
+}
+
+.cs-status-badge--exploration::before {
+  background: var(--color-label-quaternary);
+}
+
+.cs-status-badge--prototype {
+  background: rgba(255, 107, 0, 0.08);
+  color: var(--color-warning);
+}
+
+.cs-status-badge--prototype::before {
+  background: var(--color-warning);
+}
+
+/* Evidence Annotation — Metric methodology note */
+.cs-evidence {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-fill-secondary);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.cs-evidence p {
+  font-size: var(--text-sm) !important;
+  color: var(--color-label-tertiary) !important;
+  line-height: var(--leading-snug) !important;
+  margin: 0 !important;
+  font-style: italic;
+}
+
+.cs-evidence-label {
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* Team Block — Ownership & composition */
+.cs-team-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  background: var(--color-fill-secondary);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-2);
+}
+
+.cs-team-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cs-team-item-label {
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-label-quaternary);
+}
+
+.cs-team-item-value {
+  font-size: var(--text-sm);
+  color: var(--color-label-primary);
+  line-height: var(--leading-snug);
+}
+
+@media (max-width: 768px) {
+  .cs-team-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Judgment Callout — Honest design moments */
+.cs-judgment {
+  padding: var(--space-6);
+  background: #FFFBF0;
+  border: 1px solid #F0E6CC;
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.cs-judgment-label {
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #B8860B;
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cs-judgment p {
+  font-size: var(--text-sm) !important;
+  color: var(--color-label-secondary) !important;
+  line-height: var(--leading-normal) !important;
+  margin: 0 !important;
+}
+
+.cs-judgment p + p {
+  margin-top: var(--space-3) !important;
+}
+
+/* Card Status Tag — overlay on homepage cards */
+.card-status-tag {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.02em;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.card-status-tag--shipped {
+  background: rgba(29, 150, 85, 0.15);
+  color: #0D7A3E;
+}
+
+.card-status-tag--concept {
+  background: rgba(0, 102, 204, 0.12);
+  color: var(--color-accent);
+}
+
+.card-status-tag--exploration {
+  background: rgba(110, 110, 115, 0.12);
+  color: var(--color-label-tertiary);
+}

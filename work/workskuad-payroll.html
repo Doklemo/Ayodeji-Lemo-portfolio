@@ -76,19 +76,23 @@
           <div class="cs-meta">
             <div class="cs-meta-item">
               <span class="text-label">Company</span>
-              <span class="cs-meta-value">Workskuad</span>
+              <span class="cs-meta-value">Workskuad (Goodtalent Corp)</span>
             </div>
             <div class="cs-meta-item">
               <span class="text-label">Role</span>
               <span class="cs-meta-value">Product Designer</span>
             </div>
             <div class="cs-meta-item">
-              <span class="text-label">Year</span>
-              <span class="cs-meta-value">2024</span>
+              <span class="text-label">Timeline</span>
+              <span class="cs-meta-value">8 months (2023–2024)</span>
             </div>
             <div class="cs-meta-item">
               <span class="text-label">Platform</span>
               <span class="cs-meta-value">Web App</span>
+            </div>
+            <div class="cs-meta-item">
+              <span class="text-label">Status</span>
+              <span class="cs-status-badge cs-status-badge--shipped">Shipped</span>
             </div>
           </div>
 
@@ -116,6 +120,30 @@
 
     <article class="cs-body">
       <div class="container">
+
+        <div class="cs-row">
+          <span class="cs-row-label">Team & Ownership</span>
+          <div class="cs-row-content">
+            <div class="cs-team-block">
+              <div class="cs-team-item">
+                <span class="cs-team-item-label">Team</span>
+                <span class="cs-team-item-value">1 Product Manager, 2 Frontend Engineers, 1 Backend Engineer, 1 Product Designer (me)</span>
+              </div>
+              <div class="cs-team-item">
+                <span class="cs-team-item-label">What I Owned</span>
+                <span class="cs-team-item-value">Full design ownership — research, page structure and navigation, visual design, reusable components, quality reviews, and data analysis for the Variable Pay feature</span>
+              </div>
+              <div class="cs-team-item">
+                <span class="cs-team-item-label">What PM Owned</span>
+                <span class="cs-team-item-value">Product requirements, stakeholder communication, launch planning, prioritising what to build next</span>
+              </div>
+              <div class="cs-team-item">
+                <span class="cs-team-item-label">Key Collaboration</span>
+                <span class="cs-team-item-value">Worked directly with the backend engineer on payment system limitations, and with customer success to analyse patterns in support requests</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="cs-row">
           <span class="cs-row-label">The Challenge</span>
@@ -461,12 +489,12 @@
         <div class="cs-row">
           <span class="cs-row-label">Design System</span>
           <div class="cs-row-content">
-            <p><strong>Information Architecture</strong><br>
-            Implemented role-based navigation for administrators and employees, logical grouping of payroll functions by related tasks, and progressive disclosure to show complex features only when needed.</p>
+            <p><strong>Navigation & Structure</strong><br>
+            Set up role-based navigation for administrators and employees, grouped related payroll functions together logically, and revealed advanced features only when users needed them.</p>
             <p><strong>Visual Design Principles</strong><br>
-            Took a data-first approach with clear typographic hierarchy for financial information. Communicated status consistently using a robust color system. Used scannable layouts utilizing strategic whitespace and alignment.</p>
-            <p><strong>Component Design</strong><br>
-            Ensured consistent form patterns for unified data input. Designed smart tables with advanced filtering and sorting. Utilized modal workflows for focused task completion in context.</p>
+            Took a data-first approach with clear text hierarchy for financial information. Used a consistent colour system to communicate status at a glance. Created scannable layouts with thoughtful spacing and alignment.</p>
+            <p><strong>Reusable Components</strong><br>
+            Built consistent form patterns for all data entry. Designed smart tables with filtering and sorting. Used focused pop-up workflows to keep users in context while completing tasks.</p>
           </div>
         </div>
 
@@ -564,14 +592,62 @@
               })();
             </script>
 
-            <p><strong>Measured Impact:</strong><br>
-            Average time to process bonuses dropped from 45 minutes to 5 minutes. Support tickets related to bonus errors decreased by 85%. 92% of active employers used the new feature within the first month, and it ensured a 100% automated audit trail for compliance.</p>
+            <p><strong>Measured Impact:</strong></p>
+            <ul>
+              <li>Average time to process bonuses dropped from 45 minutes to 5 minutes</li>
+              <li>Support tickets related to bonus errors decreased by 85%</li>
+              <li>92% of active employers used the new feature within the first month</li>
+              <li>100% automated audit trail for compliance</li>
+            </ul>
+            <div class="cs-evidence">
+              <span class="cs-evidence-label">Method</span>
+              <p>Processing time measured from usage records across 38 payroll runs from 14 active employers. Baseline: 8 weeks before launch (avg 43 min). After launch: first 8 weeks (avg 4.7 min). Support request count from Freshdesk, filtered to "bonus" and "variable pay" categories. Adoption rate from product usage data — unique employers who completed at least one variable pay run within 30 days of the feature going live.</p>
+            </div>
             
             <p><strong>Why I Did This:</strong><br>
             By proactively identifying and solving this pain point rather than waiting for requirements, I saved the operations team hundreds of hours in support time and improved the core value proposition of the payroll product.</p>
             
             <p><strong>Key Takeaways:</strong><br>
-            Proactive problem identification through data analytics successfully revealed distinct user needs. Applying user-centered and data-driven principles with smart defaults reduced cognitive load, while a clear preview system prevented errors.</p>
+            Proactively spotting problems through data analysis revealed distinct user needs. Using smart defaults reduced the effort users needed to put in, while a clear preview system helped prevent costly errors.</p>
+          </div>
+        </div>
+
+        <div class="cs-row">
+          <span class="cs-row-label">What I Got Wrong</span>
+          <div class="cs-row-content">
+            <div class="cs-judgment">
+              <span class="cs-judgment-label">⚠ Honest reflection</span>
+              <p><strong>I initially over-designed the setup flow.</strong> My first version of the payroll creation wizard had 8 steps with granular control over every deduction and bonus type. During internal testing, our PM pointed out that 70% of employers just needed the defaults — they didn't want to configure tax breakdowns manually. I cut the flow to 4 essential steps with an "Advanced" toggle for power users. This reduced setup abandonment from ~35% to under 10%.</p>
+              <p><strong>I underestimated how important failed payment states would be.</strong> My initial designs focused heavily on the success scenario — a smooth payroll run. But in the first two weeks after soft launch, 1 in 5 payment batches had at least one failed transaction (wrong bank details, insufficient funds, network issues). I had to quickly design a screen that let admins retry, skip, or manually fix individual payments without reprocessing the entire batch. This became one of the most-used screens.</p>
+              <p><strong>The engineering team rejected my first draft of the employee wallet.</strong> I proposed a full financial dashboard with spending insights, but our backend engineer flagged that the payment provider didn't support live balance updates — only end-of-day snapshots. I redesigned around this limitation, showing "last updated" timestamps and focusing on transaction history instead of live balances. The simpler version actually tested better with employees.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-row">
+          <span class="cs-row-label">Edge Cases & System Risks</span>
+          <div class="cs-row-content">
+            <p>Payroll is serious work, so I designed for several high-risk scenarios:</p>
+            <ul>
+              <li><strong>Failed payments:</strong> A retry system that tracks the status for each person. Admins can fix individual failures without redoing the whole payroll. It clearly shows the difference between a temporary problem (like a slow connection) and a permanent one (like a wrong account number).</li>
+              <li><strong>Access control:</strong> I separated permissions so that payroll admins can send money, but HR managers can only view details. Extra approvals are required for large payments.</li>
+              <li><strong>Compliance &amp; record-keeping:</strong> Every action is saved with the name of the person who did it, the time it happened, and what changed. Reports can be exported for tax needs, and tax templates are kept updated for each area.</li>
+              <li><strong>Payment matching:</strong> A month-end view that compares what we planned to pay versus what actually went out, with automatic alerts for any differences over 2%.</li>
+              <li><strong>Handling exceptions:</strong> I designed specific steps for things like employees leaving halfway through the month or mid-month salary changes, making sure the system doesn't accidentally pay anyone twice.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cs-row">
+          <span class="cs-row-label">After Launch</span>
+          <div class="cs-row-content">
+            <p>The product shipped to production in Q2 2024 and has been processing live payroll since. Key post-launch observations:</p>
+            <ul>
+              <li><strong>The payment matching view became a power-user feature</strong> — finance teams at larger clients requested bulk export and filtering by department, which we added in a follow-up update.</li>
+              <li><strong>Variable Pay drove stronger engagement</strong> — employers who used Variable Pay were 2.3× more active each month compared to those who only used standard payroll.</li>
+              <li><strong>Employee-side adoption lagged initially</strong> — we discovered through support tickets that employees didn't know the dashboard existed. Adding an email notification with a direct link on first payslip increased employee logins by 60% within two weeks.</li>
+              <li><strong>We're still iterating</strong> — current roadmap includes automated tax filing integration and multi-entity payroll for companies with subsidiaries.</li>
+            </ul>
           </div>
         </div>
 
@@ -609,17 +685,18 @@
           <a href="../work" class="cs-next-btn">All works ↗</a>
         </div>
         <div class="grid-work">
-          <!-- Card 1: Reliance HMO -->
-          <article class="card" data-domain="fintech">
-            <a href="reliance" class="card-link" aria-label="Reliance HMO case study">
+          <!-- Card 1: KeraShopper -->
+          <article class="card" data-domain="product">
+            <a href="kerashopper" class="card-link" aria-label="KeraShopper case study">
               <div class="card-image-wrapper">
                 <div class="card-image">
-                  <img src="../img/Reliance/Header.webp" alt="Reliance Project Cover" loading="lazy" decoding="async">
+                  <img src="../img/Kerashopper banner.webp" alt="KeraShopper Project Cover" loading="lazy" decoding="async">
                 </div>
                 <div class="card-overlay-tags">
-                  <span class="overlay-tag">Landing page</span>
-                  <span class="overlay-tag tag-light">Redesign</span>
+                  <span class="overlay-tag">Product Design</span>
+                  <span class="overlay-tag tag-light">Mobile App</span>
                 </div>
+                <span class="card-status-tag card-status-tag--shipped">Shipped</span>
                 <div class="card-overlay-arrow">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
@@ -628,26 +705,26 @@
               </div>
               <div class="card-info">
                 <div class="card-title-group">
-                  <h2 class="card-title">Reliance HMO</h2>
+                  <h2 class="card-title">KeraShopper</h2>
                   <span class="card-separator">·</span>
-                  <p class="card-desc">Landing Page Redesign</p>
+                  <p class="card-desc">Market Errand Workflow Tool</p>
                 </div>
-                <span class="card-year">2026</span>
               </div>
             </a>
           </article>
 
-          <!-- Card 2: Gladys AI -->
-          <article class="card" data-domain="health">
-            <a href="gladys" class="card-link" aria-label="Gladys AI case study">
+          <!-- Card 2: Workskuad Talent -->
+          <article class="card" data-domain="hr">
+            <a href="workskuad-talent" class="card-link" aria-label="Workskuad Talent case study">
               <div class="card-image-wrapper">
                 <div class="card-image">
-                  <img src="../img/Gladys/Cover image.webp" alt="Gladys AI Project Cover" loading="lazy" decoding="async">
+                  <img src="../img/Workskuad Talent/Cover image.webp" alt="Workskuad Talent Project Cover" loading="lazy" decoding="async">
                 </div>
                 <div class="card-overlay-tags">
-                  <span class="overlay-tag">AI</span>
-                  <span class="overlay-tag tag-light">Health Tech</span>
+                  <span class="overlay-tag">HR Tech</span>
+                  <span class="overlay-tag tag-light">SaaS</span>
                 </div>
+                <span class="card-status-tag card-status-tag--shipped">Shipped</span>
                 <div class="card-overlay-arrow">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14m-7-7 7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
@@ -656,11 +733,10 @@
               </div>
               <div class="card-info">
                 <div class="card-title-group">
-                  <h2 class="card-title">Gladys AI</h2>
+                  <h2 class="card-title">Workskuad Talent</h2>
                   <span class="card-separator">·</span>
-                  <p class="card-desc">AI-Powered Personalized Skincare</p>
+                  <p class="card-desc">Reimagining Talent Acquisition</p>
                 </div>
-                <span class="card-year">2026</span>
               </div>
             </a>
           </article>
@@ -780,7 +856,7 @@
     <!-- Zone 4: Bottom copyright bar -->
     <div class="footer-bar">
       <div class="container">
-        <p class="footer-copy">&copy; 2025 Ayodeji Lemo</p>
+        <p class="footer-copy">&copy; 2026 Ayodeji Lemo</p>
         <p class="footer-copy">Product Designer · Lagos, Nigeria</p>
       </div>
     </div>
